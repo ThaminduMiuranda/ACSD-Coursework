@@ -1,0 +1,116 @@
+{
+  "properties": [
+    {
+      "id": "prop1",
+      "type": "House",
+      "bedrooms": 3,
+      "price": 750000,
+      "tenure": "Freehold",
+      "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+      "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+      "picture": "images/prop1pic1small.jpg",
+      "url": "properties/prop1.html",
+      "added": {
+        "month": "October",
+        "day": 12,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop2",
+      "type": "Flat",
+      "bedrooms": 2,
+      "price": 399995,
+      "tenure": "Freehold",
+      "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+      "location": "Crofton Road Orpington BR6",
+      "picture": "images/prop2pic1small.jpg",
+      "url": "properties/prop2.html",
+      "added": {
+        "month": "September",
+        "day": 14,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop3",
+      "type": "House",
+      "bedrooms": 4,
+      "price": 850000,
+      "tenure": "Freehold",
+      "description": "A spacious and beautifully presented four-bedroom detached house located in the heart of Cambridge. The property features a large garden, modern kitchen, and ample parking space. This home is situated within walking distance of local schools, shops, and excellent transport links, making it ideal for families. The ground floor includes a welcoming entrance hall, a bright living room, a dining area, and a fully equipped kitchen. Upstairs, there are four generously sized bedrooms and two modern bathrooms. Additional highlights include double glazing, gas central heating, and a well-maintained exterior...",
+      "location": "Little Green, Cambridge, CB4 1EZ",
+      "picture": "images/prop3pic1small.jpg",
+      "url": "properties/prop3.html",
+      "added": {
+        "month": "November",
+        "day": 1,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop4",
+      "type": "House",
+      "bedrooms": 3,
+      "price": 650000,
+      "tenure": "Freehold",
+      "description": "Charming three-bedroom Victorian terraced house in a vibrant neighborhood of Brighton. Recently refurbished with modern interiors and a spacious backyard. The property boasts high ceilings, original fireplaces, and large bay windows that flood the rooms with natural light. The ground floor features a cozy living room, a dining area, and a contemporary kitchen with integrated appliances. The first floor includes three comfortable bedrooms and a luxurious family bathroom. Conveniently located near local amenities, transport links, and popular parks, this home perfectly combines character and modern living...",
+      "location": "Victoria Road, Brighton, BN1 3FG",
+      "picture": "images/prop4pic1small.jpg",
+      "url": "properties/prop4.html",
+      "added": {
+        "month": "October",
+        "day": 20,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop5",
+      "type": "Apartment",
+      "bedrooms": 2,
+      "price": 450000,
+      "tenure": "Leasehold",
+      "description": "Stylish two-bedroom apartment in the bustling center of Liverpool. Includes an open-plan living area, modern kitchen, and stunning city views. The property is part of a contemporary development and benefits from a secure entry system, a lift to all floors, and dedicated parking. The kitchen features high-quality finishes, integrated appliances, and ample storage. Both bedrooms are spacious and have built-in wardrobes, while the bathroom is sleek and features a bathtub with a shower. Located within walking distance of shops, restaurants, and cultural landmarks, this apartment offers urban living at its finest...",
+      "location": "89 Church Street, Liverpool, L3 8DA",
+      "picture": "images/prop5pic1small.jpg",
+      "url": "properties/prop5.html",
+      "added": {
+        "month": "September",
+        "day": 15,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop6",
+      "type": "Apartment",
+      "bedrooms": 2,
+      "price": 380000,
+      "tenure": "Leasehold",
+      "description": "A cozy two-bedroom apartment located in a quiet cul-de-sac in Newcastle. Features include a modern kitchen, balcony, and designated parking. The property comprises a spacious living area with large windows offering plenty of natural light, a fully fitted kitchen with integrated appliances, and two well-proportioned bedrooms. The bathroom is modern and includes both a bathtub and a shower. Additional benefits include double glazing, central heating, and excellent transport links to the city center. Ideal for professionals or small families looking for a comfortable and stylish home...",
+      "location": "66 Brookside Close, Newcastle, NE4 6JD",
+      "picture": "images/prop6pic1small.jpg",
+      "url": "properties/prop6.html",
+      "added": {
+        "month": "August",
+        "day": 25,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop7",
+      "type": "Flat",
+      "bedrooms": 1,
+      "price": 275000,
+      "tenure": "Leasehold",
+      "description": "Modern one-bedroom flat in York, ideal for first-time buyers. Features include an open-plan kitchen, a private balcony, and proximity to local amenities. This property offers a stylish living space with a contemporary design and high-quality finishes throughout. The kitchen is fitted with integrated appliances and provides plenty of workspace and storage. The bedroom is generously sized with built-in wardrobes, and the bathroom is sleek with modern fixtures. Located in a sought-after area, the flat is within easy reach of shops, restaurants, and excellent transport links. Perfect for young professionals or couples...",
+      "location": "23 Park Lane, York, YO10 4DW",
+      "picture": "images/prop7pic1small.jpg",
+      "url": "properties/prop7.html",
+      "added": {
+        "month": "July",
+        "day": 10,
+        "year": 2022
+      }
+    }
+  ]
+}
