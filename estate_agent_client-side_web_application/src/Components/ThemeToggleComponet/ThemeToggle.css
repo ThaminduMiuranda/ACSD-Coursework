@@ -1,10 +1,11 @@
 .toggle-btn {
+  z-index: 0;
   position: relative;
   height: var(--toggle-btn-height);
   aspect-ratio: 2/1;
   /* margin: 1rem; */
   background-color: #b7b9ba;
-  border: var(--toggle-btn-border) solid #aaa;
+  border: var(--toggle-btn-border) solid var(--toggle-border-color);
   border-radius: calc(var(--toggle-btn-height) / 2);
   transition: background-color 500ms ease, border-color 300ms ease;
   cursor: pointer;
@@ -13,7 +14,8 @@
 .toggle-btn .thumb {
   height: var(--thumb-height);
   aspect-ratio: 1/1;
-  background-color: var(--color-background);
+  /* background-color: var(--color-background); */
+  background-color: var(--toggle-border-color);
   border-radius: 50%;
   transform: translateX(0);
   transition: left 0.15s ease;
@@ -24,10 +26,11 @@
 
 .toggle-btn.toggled {
   background-color: var(--color-foreground);
-  border-color: var(--color-foreground);
+  /* border-color: var(--color-foreground); */
+  /* border-color: #aaa; */
 
   & .thumb {
-    background-color: var(--color-background);
+    /* background-color: var(--color-background); */
     left: calc(100% - var(--thumb-height) - var(--toggle-btn-border));
     right: var(--toggle-btn-border);
     top: var(--toggle-btn-border);

@@ -53,9 +53,11 @@ function Login() {
 
       setMessage(result.message);
       if (result.success) {
+        localStorage.setItem("loggedInUser", username); // Sotres the currently logged in user.
         setTimeout(() => {
           navigate("/home");
         }, 2000); // to imitate an api request
+      } else {
       }
     } catch (error) {
       setMessage("An error occurred during login. Please try again.");

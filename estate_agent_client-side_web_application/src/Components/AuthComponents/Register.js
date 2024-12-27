@@ -55,6 +55,8 @@ function Register() {
       setMessage(result.message);
 
       if (result.success) {
+        localStorage.setItem("loggedInUser", username); // Store new user
+
         setUsername("");
         setPassword("");
 

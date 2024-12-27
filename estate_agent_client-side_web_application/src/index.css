@@ -14,25 +14,90 @@
 }
 
 :root {
-  --color-background: #fafafa;
-  --color-foreground: #1f2023;
+  --gray-0: 255, 255, 255;
+  --gray-50: 250, 250, 250;
+  --gray-100: 245, 245, 245;
+  --gray-200: 229, 229, 229;
+  --gray-300: 212, 212, 212;
+  --gray-400: 163, 163, 163;
+  --gray-500: 115, 115, 115;
+  --gray-600: 82, 82, 82;
+  --gray-700: 64, 64, 64;
+  --gray-800: 38, 38, 38;
+  --gray-900: 23, 23, 23;
+  --gray-950: 10, 10, 10;
+
+  --border: 1px solid rgba(var(--gray-950), 0.3);
+  /* --color-background: #fafafa; */
+  /* --color-foreground: #1f2023; */
+  --color-background: #fffdfa;
+  --text-primary: #002a44;
+  --text-secondary: #667883;
+  --accent-primary: #254d86;
+  --accent-secondary: #257e86;
+  --navbar-link: #257e86;
+  --navbar-background: #a3a3a3;
 
   --background-transition: background-color 300ms ease;
 
   /* ThemeToggle variables */
-  --toggle-btn-height: 24px;
-  --toggle-btn-border: 1px;
+  --toggle-btn-height: 28px;
+  --toggle-btn-border: 2px;
+  --toggle-border-color: #555;
   --thumb-height: 20px;
+
+  /* navbar */
+  --nav-height: 53px;
+  --nav-background-color: #ffffff;
+  --nav-expand-text-color: #1f2023;
+  --logo-text-color: #1f2023;
 }
 
 .dark-mode {
-  --color-background: #1f2023;
-  --color-foreground: #efefef;
+  --gray-0: 0, 0, 0;
+  --gray-50: 10, 10, 10;
+  --gray-100: 23, 23, 23;
+  --gray-200: 38, 38, 38;
+  --gray-300: 55, 55, 55;
+  --gray-400: 82, 82, 82;
+  --gray-500: 138, 138, 138;
+  --gray-600: 163, 163, 163;
+  --gray-700: 212, 212, 212;
+  --gray-800: 229, 229, 229;
+  --gray-900: 245, 245, 245;
+  --gray-950: 250, 250, 250;
+
+  --border: 1px solid rgba(var(--gray-950), 0.3);
+
+  /* --color-background: #1f2023; */
+  /* --color-foreground: #efefef; */
+  --color-background: #121212;
+  --text-primary: #ffffffb3;
+  --text-secondary: #ffffff80;
+  --accent-primary: #7c94b6;
+  --accent-secondary: #51989e;
+  --navbar-link: #51989e;
+  --navbar-background: #525252;
+
+  /* ThemeToggle */
+  --toggle-border-color: #aaa;
+
+  /* navbar */
+  --nav-background-color: #ffffff;
+  --nav-expand-text-color: #1f2023;
+  --logo-text-color: #1f2023;
+}
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
   background-color: var(--color-background);
   transition: var(--background-transition);
+  background-color: color-mix(in srgb, color percentage, color percentage);
+  height: 100dvh;
+  width: 100dvw;
 }
 
 /* body.dark-mode {

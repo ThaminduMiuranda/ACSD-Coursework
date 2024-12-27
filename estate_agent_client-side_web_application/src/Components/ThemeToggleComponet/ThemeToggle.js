@@ -27,10 +27,14 @@ import "./ThemeToggle.css";
  */
 function ThemeToggle() {
   // State variable to track whether dark mode is enabled
-  const [toggled, setToggled] = useState(false);
+  const [toggled, setToggled] = useState(() => {
+    const savedTheme = localStorage.getItem("darkMode");
+    return savedTheme === "true";
+  });
 
   // When the ThemeToggle component is first rendered (mounted), the useEffect hook runs after the initial render. Since the dependency array contains [toggled], the effect will run whenever the toggled state changes.
   useEffect(() => {
+    localStorage.setItem("darkMode", toggled);
     if (toggled) {
       document.body.classList.add("dark-mode");
     } else {
