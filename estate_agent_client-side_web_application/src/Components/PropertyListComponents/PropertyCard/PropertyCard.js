@@ -3,6 +3,42 @@ import { Link } from "react-router-dom";
 import "./PropertyCard.css";
 
 function PropertyCard({ property }) {
+  function loadFavorites() {
+    const data = localStorage.getItem("favorites");
+    return data ? JSON.parse(data) : [];
+  }
+
+  function saveFavorites(favorites) {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }
+
+  function addFavorite(property) {
+    const favorites = loadFavorites();
+
+    const favoriteExists = favorites.some(
+      (favorite) => favorite.property.id === property.id
+    );
+
+    if (favoriteExists) {
+      return { success: false, message: "Favorite is already added." };
+    }
+
+    favorites.push({ property });
+    saveFavorites(favorites);
+
+    return { success: true, message: "Favorite added." };
+  }
+
+  function handleAddFavorites() {
+    try {
+      const result = addFavorite(property);
+
+      console.log(result.message);
+    } catch (error) {
+      console.log("Favorite adding error:", error);
+    }
+  }
+
   return (
     <div className="property-card">
       <div className="content">
@@ -19,7 +55,7 @@ function PropertyCard({ property }) {
         <div className="property-summary">
           <div className="property-heading">
             <span>{property.type}</span>
-            <MdFavoriteBorder className="icon" />
+            <MdFavoriteBorder className="icon" onClick={handleAddFavorites} />
           </div>
           <div className="location">
             <MdLocationPin className="icon" />

@@ -2,9 +2,17 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
+  gap: 1px 1px;
   grid-template-areas:
     ". . ."
     ". . ."
     ". . .";
+  border: var(--border);
+
+  & .no-results {
+    grid-area: 2 / 2 / 3 / 3;
+    color: rgb(var(--gray-950));
+    justify-self: center;
+    align-self: center;
+  }
 }
