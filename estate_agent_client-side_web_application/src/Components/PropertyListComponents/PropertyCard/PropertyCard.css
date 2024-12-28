@@ -1,0 +1,99 @@
+.property-card {
+  padding: 24px;
+  width: 355px;
+  /* height: 533px; */
+  border: var(--border);
+  background-color: rgb(var(--gray-0));
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 307px;
+  gap: 10px;
+}
+
+.property-image {
+  border-radius: 16px;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.property-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  color: rgb(var(--gray-950));
+
+  & div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.property-heading {
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.location {
+  justify-content: start;
+  gap: 5px;
+
+  & span {
+    font-size: 12px;
+  }
+}
+
+.bedrooms {
+  justify-content: start;
+  gap: 5px;
+
+  & span {
+    font-size: 12px;
+  }
+}
+
+.price-details {
+  margin-top: 10px;
+  display: flex;
+  align-items: end;
+  gap: 10px;
+
+  & .price-type {
+    margin-top: 3.5px;
+    font-size: 12px;
+    display: flex;
+    align-items: end;
+  }
+
+  & .price {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: end;
+    gap: 5px;
+
+    & span {
+      font-size: 12px;
+      margin-bottom: 2.5px;
+      font-weight: normal;
+    }
+  }
+}
+
+.view-more {
+  height: 48px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  text-decoration: none;
+}
