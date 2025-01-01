@@ -7,17 +7,17 @@
 //   ],
 // };
 
-function loadDatabase() {
+function loadUsers() {
   const data = localStorage.getItem("users");
   return data ? JSON.parse(data) : [];
 }
 
-function saveDatabase(users) {
+function saveUsers(users) {
   localStorage.setItem("users", JSON.stringify(users));
 }
 
 export function registerUser(username, password) {
-  const users = loadDatabase();
+  const users = loadUsers();
 
   const userExists = users.some((user) => user.username === username);
 
@@ -26,13 +26,13 @@ export function registerUser(username, password) {
   }
 
   users.push({ username, password });
-  saveDatabase(users);
+  saveUsers(users);
 
   return { success: true, message: "Registration successful." };
 }
 
 export function loginUser(username, password) {
-  const users = loadDatabase();
+  const users = loadUsers();
   const user = users.find(
     (user) => user.username === username && user.password === password
   );
