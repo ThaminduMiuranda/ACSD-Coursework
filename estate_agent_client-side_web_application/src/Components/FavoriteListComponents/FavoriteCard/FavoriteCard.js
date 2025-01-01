@@ -1,34 +1,36 @@
-import { MdBed, MdFavoriteBorder, MdLocationPin } from "react-icons/md";
+import { MdBed, MdLocationPin, MdOutlineDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
-import "./PropertyCard.css";
+import "./FavoriteCard.css";
 
-function PropertyCard({ property, onAdd }) {
+function FavoriteCard({ property, onRemove }) {
   function handleDragStart(event) {
-    event.dataTransfer.setData("drag-type", "property");
+    event.dataTransfer.setData("drag-type", "favorite");
     event.dataTransfer.setData("property-id", property.id);
   }
 
-  function handleAddFavorites() {
-    onAdd(property);
+  function handleRemoveFavorites() {
+    onRemove(property);
   }
 
   return (
-    <div className="property-card" draggable onDragStart={handleDragStart}>
+    <div className="favorite-card" draggable onDragStart={handleDragStart}>
       <div className="content">
         <div
-          className="property-image"
+          className="favorite-image"
           style={{
             backgroundImage: `url(${property.picture})`,
-            height: "238px",
-            width: "307px",
-            backgroundSize: "auto 238px",
+            height: "150px",
+            // width: "200px",
+            aspectRatio: "307/238",
+            backgroundSize: "auto 150px",
+            // backgroundSize: "200px auto",
             backgroundRepeat: "no-repeat",
           }}
         ></div>
-        <div className="property-summary">
-          <div className="property-heading">
+        <div className="favorite-summary">
+          <div className="favorite-heading">
             <span>{property.type}</span>
-            <MdFavoriteBorder className="icon" onClick={handleAddFavorites} />
+            <MdOutlineDelete className="icon" onClick={handleRemoveFavorites} />
           </div>
           <div className="location">
             <MdLocationPin className="icon" />
@@ -38,9 +40,9 @@ function PropertyCard({ property, onAdd }) {
             <MdBed className="icon" />
             <span>{property.bedrooms}</span>
           </div>
-          <div className="description">
-            {property.description.substring(0, 50)}...
-          </div>
+          {/* <div className="description">
+            {property.description.substring(0, 80)}...
+          </div> */}
           <div className="price-details">
             <span className="price-type">
               {property.type === "House" ? "Price:" : "Rent:"}
@@ -59,4 +61,4 @@ function PropertyCard({ property, onAdd }) {
   );
 }
 
-export default PropertyCard;
+export default FavoriteCard;

@@ -1,4 +1,32 @@
 .search-main {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  width: 100dvw;
+  justify-items: center;
+  /* grid-template-columns: 1fr 2fr 1fr; */
+  /* grid-template-columns: 1fr auto; */
 }
+
+/* .search-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 250px;
+} */
+
+.grid {
+  display: grid;
+  position: relative;
+  width: fit-content;
+  grid-template-columns: 1fr auto;
+  /* height: 100svh; */
+  align-items: start;
+  /* justify-content: center; */
+}
+
+@media (min-width: 640px) {
+}
+
+/* @media (min-width: 1000px) {
+  .property-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+} */
