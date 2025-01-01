@@ -108,6 +108,7 @@ function SearchProperty() {
       </header>
       <main className="search-main">
         <SearchBar className="search-section" onSearch={handleSearch} />
+        <h3 className="properties">Properties</h3>
         <div className="grid">
           {filteredProperties.length > 0 ? (
             <PropertyGrid

@@ -10,12 +10,23 @@ label {
   }
 }
 
-input {
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.min-price-input,
+.max-price-input,
+.min-bedrooms-input,
+.max-bedrooms-input,
+.postcode-input {
   width: 200px;
   height: 24px;
-  margin: 2px 0 2px 0;
+  /* margin: 2px 0 2px 0; */
   padding: 0 12px 0 12px;
   font-size: 14px;
+  border: var(--border);
   border-radius: 4px;
   /* box-sizing: border-box; */
 }
@@ -23,12 +34,21 @@ input {
 .rw-widget-picker {
   min-height: 0;
 }
-
-.rw-dropdown-list {
-  /* width: 200px; */
+.rw-widget-container {
+  border-radius: 0;
+  box-shadow: none;
+  border: var(--border);
+  border-radius: 4px;
   min-height: 0;
   height: 24px;
   font-size: 14px;
+}
+.rw-widget-container input {
+  box-shadow: none;
+}
+
+.rw-dropdown-list {
+  /* width: 200px; */
 }
 
 .rw-dropdown-list-value {

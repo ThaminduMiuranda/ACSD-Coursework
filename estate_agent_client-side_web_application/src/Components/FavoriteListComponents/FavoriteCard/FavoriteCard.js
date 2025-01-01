@@ -1,4 +1,4 @@
-import { MdBed, MdLocationPin, MdOutlineDelete } from "react-icons/md";
+import { MdLocationPin, MdOutlineDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./FavoriteCard.css";
 
@@ -36,10 +36,10 @@ function FavoriteCard({ property, onRemove }) {
             <MdLocationPin className="icon" />
             <span>{property.location}</span>
           </div>
-          <div className="bedrooms">
+          {/* <div className="bedrooms">
             <MdBed className="icon" />
             <span>{property.bedrooms}</span>
-          </div>
+          </div> */}
           {/* <div className="description">
             {property.description.substring(0, 80)}...
           </div> */}

@@ -45,6 +45,7 @@ function FavoriteGrid({ favorites, onRemove, onAdd, allProperties }) {
         onDrop={handleDrop}
         onDragOver={handleDragOver}
       >
+        <h3 className="favorites-heading">Favorites</h3>
         {favorites.length === 0 ? (
           <span className="no-favorites">No favorites added</span>
         ) : (

@@ -27,16 +27,22 @@
   --gray-900: 23, 23, 23;
   --gray-950: 10, 10, 10;
 
+  --text-primary: 0, 0, 0;
+  --text-shadow-color: 255, 255, 255;
+  /* --text-primary: 255, 255, 255; */
+
   --border: 1px solid rgba(var(--gray-950), 0.3);
-  /* --color-background: #fafafa; */
+  --box-shadow: rgba(var(--gray-950), 0.2) 0px 0px 15px,
+    rgba(var(--gray-950), 0.15) 0px 0px 3px 1px;
+  --color-background: #fafafa;
   /* --color-foreground: #1f2023; */
-  --color-background: #fffdfa;
-  --text-primary: #002a44;
-  --text-secondary: #667883;
-  --accent-primary: #254d86;
-  --accent-secondary: #257e86;
-  --navbar-link: #257e86;
-  --navbar-background: #a3a3a3;
+  /* --color-background: #fffdfa; */
+  /* --text-primary: #002a44; */
+  /* --text-secondary: #667883; */
+  /* --accent-primary: #254d86; */
+  /* --accent-secondary: #257e86; */
+  /* --navbar-link: #257e86; */
+  /* --navbar-background: #a3a3a3; */
 
   --background-transition: background-color 300ms ease;
 
@@ -48,9 +54,9 @@
 
   /* navbar */
   --nav-height: 53px;
-  --nav-background-color: #ffffff;
-  --nav-expand-text-color: #1f2023;
-  --logo-text-color: #1f2023;
+  /* --nav-background-color: #ffffff; */
+  /* --nav-expand-text-color: #1f2023; */
+  /* --logo-text-color: #1f2023; */
 }
 
 .dark-mode {
@@ -67,25 +73,32 @@
   --gray-900: 245, 245, 245;
   --gray-950: 250, 250, 250;
 
-  --border: 1px solid rgba(var(--gray-950), 0.3);
+  --text-primary: 0, 0, 0;
+  --text-shadow-color: 255, 255, 255;
 
-  /* --color-background: #1f2023; */
+  /* --text-primary: 255, 255, 255; */
+
+  --border: 1px solid rgba(var(--gray-950), 0.3);
+  --box-shadow: rgba(var(--gray-950), 0.2) 0px 0px 15px,
+    rgba(var(--gray-950), 0.15) 0px 0px 3px 1px;
+
+  --color-background: #1f2023;
   /* --color-foreground: #efefef; */
-  --color-background: #121212;
-  --text-primary: #ffffffb3;
-  --text-secondary: #ffffff80;
-  --accent-primary: #7c94b6;
-  --accent-secondary: #51989e;
-  --navbar-link: #51989e;
-  --navbar-background: #525252;
+  /* --color-background: #121212; */
+  /* --text-primary: #ffffffb3; */
+  /* --text-secondary: #ffffff80; */
+  /* --accent-primary: #7c94b6; */
+  /* --accent-secondary: #51989e; */
+  /* --navbar-link: #51989e; */
+  /* --navbar-background: #525252; */
 
   /* ThemeToggle */
   --toggle-border-color: #aaa;
 
   /* navbar */
-  --nav-background-color: #ffffff;
-  --nav-expand-text-color: #1f2023;
-  --logo-text-color: #1f2023;
+  /* --nav-background-color: #ffffff; */
+  /* --nav-expand-text-color: #1f2023; */
+  /* --logo-text-color: #1f2023; */
 }
 html,
 body {

@@ -1,6 +1,7 @@
 /*Default styles (Mobile-First) for screens smaller than 640px*/
 nav {
   /* height: var(--nav-height); */
+  /* position: fixed; */
   width: 100dvw;
   background-color: rgb(var(--gray-0));
   border-bottom: var(--border);
@@ -35,8 +36,7 @@ a {
 
     background-color: rgb(var(--gray-0));
     border: none;
-    box-shadow: rgba(var(--gray-950), 0.2) 0px 0px 15px,
-      rgba(var(--gray-950), 0.15) 0px 0px 3px 1px;
+    box-shadow: var(--box-shadow);
     color: rgb(var(--gray-950));
     font-weight: 700;
   }
@@ -141,10 +141,11 @@ a {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  color: var(--navbar-link);
+  color: rgb(var(--gray-950));
 
   & span {
     width: 120px;
+    color: rgb(var(--gray-950));
   }
 }
 
@@ -153,7 +154,7 @@ a {
   gap: 30px;
   justify-content: space-between;
   align-items: center;
-  color: var(--navbar-link);
+  color: rgb(var(--gray-950));
 }
 
 .mobile-links.expanded {

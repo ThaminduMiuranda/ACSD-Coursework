@@ -12,8 +12,19 @@
   width: 250px;
 } */
 
+.properties {
+  padding: 6px;
+  text-align: center;
+  width: 100%;
+  border-bottom: var(--border);
+  color: rgb(var(--gray-950));
+}
+
 .grid {
+  /* overflow-y: hidden; */
+  /* margin-top: 24px; */
   display: grid;
+  /* padding: 1px; */
   position: relative;
   width: fit-content;
   grid-template-columns: 1fr auto;

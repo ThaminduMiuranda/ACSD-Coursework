@@ -43,7 +43,7 @@ function SearchBar({ onSearch }) {
           onChange={(value) => setSearchData({ ...searchData, type: value })}
         />
       </label>
-      <div className="price-filter">
+      <div className="filter">
         <label className="min-price-field">
           <span className="label-name">Min Price:</span>
           <input
@@ -65,7 +65,7 @@ function SearchBar({ onSearch }) {
           />
         </label>
       </div>
-      <div className="bedroom-filter">
+      <div className="filter">
         <label className="min-bedrooms-field">
           <span className="label-name">Min Bedrooms:</span>
           <input
@@ -87,7 +87,7 @@ function SearchBar({ onSearch }) {
           />
         </label>
       </div>
-      <div className="date-filter">
+      <div className="filter">
         <label className="start-date-field">
           <span className="label-name">Start Date:</span>
           <DatePicker
