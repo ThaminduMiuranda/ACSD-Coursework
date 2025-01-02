@@ -4,6 +4,7 @@ import LandingPage from "./Pages/LandingPage/LandingPage";
 import FindAgent from "./Pages/FindAgent/FindAgent";
 import SearchProperty from "./Pages/SearchProperty/SearchProperty";
 import AuthPage from "./Pages/Authentication/AuthPage";
+import PropertyDetails from "./Pages/PropertyDetails/PropertyDetails";
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
         <Route path="/home" element={<LandingPage />} />
         <Route path="/search" element={<SearchProperty />} />
         <Route path="/find-agent" element={<FindAgent />} />
+        <Route
+          path="/search/properties/:id.html"
+          element={<PropertyDetails />}
+        />
       </Routes>
     </BrowserRouter>
   );
