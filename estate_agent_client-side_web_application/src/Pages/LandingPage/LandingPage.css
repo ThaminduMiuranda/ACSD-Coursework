@@ -1,6 +1,6 @@
-header {
-  /* position: fixed; */
-}
+/* header {
+  position: fixed;
+} */
 
 .hero {
   background-size: cover;
@@ -45,5 +45,5 @@ header {
   }
 }
 
-.hero-button {
-}
+/* .hero-button {
+} */

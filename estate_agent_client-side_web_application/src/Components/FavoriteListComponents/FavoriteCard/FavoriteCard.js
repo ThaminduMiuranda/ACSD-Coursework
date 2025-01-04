@@ -12,8 +12,19 @@ function FavoriteCard({ property, onRemove }) {
     onRemove(property);
   }
 
+  function handleDragEnd(event) {
+    if (event.dataTransfer.dropEffect === "none") {
+      onRemove(property);
+    }
+  }
+
   return (
-    <div className="favorite-card" draggable onDragStart={handleDragStart}>
+    <div
+      className="favorite-card"
+      draggable
+      onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
+    >
       <div className="content">
         <div
           className="favorite-image"

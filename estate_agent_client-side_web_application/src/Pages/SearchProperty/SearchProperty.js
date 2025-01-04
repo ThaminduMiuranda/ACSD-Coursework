@@ -52,6 +52,11 @@ function SearchProperty() {
     console.log("Property is removed from favorites.");
   }
 
+  function clearAllFavorites() {
+    setFavorites([]);
+    localStorage.setItem("favorites", JSON.stringify([]));
+  }
+
   const handleSearch = useCallback(
     (criteria) => {
       const filtered = properties.filter((property) => {
@@ -138,9 +143,11 @@ function SearchProperty() {
             onRemove={removeFavorite}
             onAdd={addFavorite}
             allProperties={properties}
+            onClearAll={clearAllFavorites}
           />
         </div>
       </main>
+      <footer></footer>
     </>
   );
 }

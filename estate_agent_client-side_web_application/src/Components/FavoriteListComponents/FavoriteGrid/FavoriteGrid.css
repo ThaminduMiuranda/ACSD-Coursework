@@ -1,14 +1,16 @@
 .favorites-grid {
   display: flex;
+  position: relative;
+  /* justify-content: center; */
   /* padding-left: 5px; */
   padding-top: 5px;
   padding-bottom: 5px;
   gap: 2px;
   flex-direction: column;
   width: fit-content;
-
   height: fit-content;
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   background-color: rgba(var(--gray-0), 0.2);
   backdrop-filter: blur(15px);
@@ -28,6 +30,14 @@
   /* border-right: var(--border); */
   color: rgb(var(--gray-950));
   /* margin-bottom: 1px; */
+}
+
+.favorites-list {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100vh - 290px);
+  border-bottom: var(--border);
 }
 
 .favorites-open,
@@ -83,6 +93,27 @@
   /* justify-self: center; */
   /* align-self: start; */
   padding: 39px;
+}
+
+.favorites-section {
+  position: relative;
+}
+
+.clear-favorites {
+  cursor: pointer;
+  flex-shrink: 0;
+  position: static;
+  height: 32px !important;
+  top: calc(100% - 32px);
+  margin: 5px 5px 0 5px;
+  border: var(--border);
+  background: rgb(var(--gray-0));
+  color: rgb(var(--gray-950));
+
+  & span {
+    margin: 10px 0;
+    font-weight: 500;
+  }
 }
 
 @media (min-width: 640px) {

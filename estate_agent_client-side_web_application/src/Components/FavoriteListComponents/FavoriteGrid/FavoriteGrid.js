@@ -3,7 +3,13 @@ import { useEffect, useState } from "react";
 import FavoriteCard from "../FavoriteCard/FavoriteCard";
 import "./FavoriteGrid.css";
 
-function FavoriteGrid({ favorites, onRemove, onAdd, allProperties }) {
+function FavoriteGrid({
+  favorites,
+  onRemove,
+  onAdd,
+  allProperties,
+  onClearAll,
+}) {
   function handleDrop(event) {
     event.preventDefault();
     const dragType = event.dataTransfer.getData("drag-type");
@@ -20,6 +26,12 @@ function FavoriteGrid({ favorites, onRemove, onAdd, allProperties }) {
 
   function handleDragOver(event) {
     event.preventDefault();
+  }
+
+  function handleClearFavorites(event) {
+    if (onClearAll) {
+      onClearAll();
+    }
   }
 
   const [favoriteMenuExpanded, setfavoriteMenuExpanded] = useState(false);
@@ -46,18 +58,28 @@ function FavoriteGrid({ favorites, onRemove, onAdd, allProperties }) {
         onDragOver={handleDragOver}
       >
         <h3 className="favorites-heading">Favorites</h3>
-        {favorites.length === 0 ? (
-          <span className="no-favorites">No favorites added</span>
-        ) : (
-          favorites.map((fav) => (
-            <FavoriteCard
-              property={fav.property}
-              key={fav.property.id}
-              onRemove={onRemove}
-            />
-          ))
-        )}
+        <div className="favorites-list">
+          {favorites.length === 0 ? (
+            <span className="no-favorites">No favorites added</span>
+          ) : (
+            favorites.map((fav) => (
+              <FavoriteCard
+                property={fav.property}
+                key={fav.property.id}
+                onRemove={onRemove}
+              />
+            ))
+          )}
+        </div>
+        <button
+          type="button"
+          className="clear-favorites"
+          onClick={handleClearFavorites}
+        >
+          <span className="button-text">Clear Favorites</span>
+        </button>
       </div>
+
       <MdMenu
         className={`favorites-open ${favoriteMenuExpanded ? "open" : ""}`}
         onClick={() => setfavoriteMenuExpanded(true)}

@@ -81,8 +81,10 @@ function PropertyDetails() {
   }
 
   return (
-    <div className="property-page">
-      <Navbar />
+    <>
+      <header>
+        <Navbar />
+      </header>
       <main className="property-main">
         {property && (
           <div className="details-wrapper">
@@ -210,7 +212,8 @@ function PropertyDetails() {
           </div>
         )}
       </main>
-    </div>
+      <footer></footer>
+    </>
   );
 }
 

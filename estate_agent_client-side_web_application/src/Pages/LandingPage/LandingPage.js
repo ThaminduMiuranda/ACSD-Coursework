@@ -1,7 +1,31 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../../Components/NavbarComponent/Navbar";
 import "./LandingPage.css";
+import FavoriteGrid from "../../Components/FavoriteListComponents/FavoriteGrid/FavoriteGrid";
 
 function LandingPage() {
+  function loadFavourites() {
+    const data = localStorage.getItem("favorites");
+    return data ? JSON.parse(data) : [];
+  }
+
+  const [favorites, setFavorites] = useState(loadFavourites());
+
+  function removeFavorite(property) {
+    const updatedFavorites = favorites.filter(
+      (fav) => fav.property.id !== property.id
+    );
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    setFavorites(updatedFavorites); // Update state to refresh the UI
+    console.log("Property is removed from favorites.");
+  }
+
+  function clearAllFavorites() {
+    setFavorites([]);
+    localStorage.setItem("favorites", JSON.stringify([]));
+  }
+
   return (
     <>
       <header>
@@ -11,7 +35,7 @@ function LandingPage() {
         <section
           className="hero"
           style={{
-            backgroundImage: "url(/img/pexels-deepak-dk-197763-4933643.jpg)",
+            backgroundImage: "url(/img/heroimage.jpg)",
           }}
         >
           <div className="hero-text">
@@ -23,12 +47,18 @@ function LandingPage() {
             </span>
           </div>
           <div className="hero-button">
-            <button type="button" className="search-button">
+            <Link className="search-button" to={"/search"}>
               <span className="search-text">Search properties</span>
-            </button>
+            </Link>
           </div>
         </section>
-        <section className="favorites"></section>
+        <section className="favorites">
+          <FavoriteGrid
+            favorites={favorites}
+            onRemove={removeFavorite}
+            onClearAll={clearAllFavorites}
+          />
+        </section>
         <section className="about"></section>
       </main>
       <footer></footer>
