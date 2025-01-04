@@ -32,6 +32,9 @@
   /* --text-primary: 255, 255, 255; */
 
   --border: 1px solid rgba(var(--gray-950), 0.3);
+  --border-image: 1px solid rgb(var(--gray-500));
+  --border-inactive: 1px solid rgba(var(--gray-950), 0.1);
+  --border-active: 1px solid rgba(var(--gray-950), 0.3);
   --box-shadow: rgba(var(--gray-950), 0.2) 0px 0px 15px,
     rgba(var(--gray-950), 0.15) 0px 0px 3px 1px;
   --color-background: #fafafa;
@@ -79,6 +82,10 @@
   /* --text-primary: 255, 255, 255; */
 
   --border: 1px solid rgba(var(--gray-950), 0.3);
+  --border-image: 1px solid rgb(var(--gray-950));
+  --border-inactive: 1px solid rgba(var(--gray-950), 0.1);
+  --border-active: 1px solid rgba(var(--gray-950), 0.3);
+  --map-width: 600px;
   --box-shadow: rgba(var(--gray-950), 0.2) 0px 0px 15px,
     rgba(var(--gray-950), 0.15) 0px 0px 3px 1px;
 
@@ -112,30 +119,3 @@ body {
   height: 100dvh;
   width: 100dvw;
 }
-
-/* body.dark-mode {
-  --color-background: #1f2023;
-  --color-foreground: #efefef;
-} */
-/* @media (prefers-color-scheme: dark) {
-} */
-
-/* <uniquifier>: Use a unique and descriptive class name */
-/* <weight>: Use a value from 200 to 1000 */
-/* <width>: Use a value from 75 to 125 */
-/* <lowercase height>: Use a value from 440 to 540 */
-
-/* .nunito-sans-<uniquifier> {
-  font-family: "Nunito Sans", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" <width>,
-    "YTLC" <lowercase height>;
-} */
-/* 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */

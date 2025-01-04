@@ -47,9 +47,9 @@ label {
   box-shadow: none;
 }
 
-.rw-dropdown-list {
-  /* width: 200px; */
-}
+/* .rw-dropdown-list {
+  width: 200px;
+} */
 
 .rw-dropdown-list-value {
   width: fit-content;
