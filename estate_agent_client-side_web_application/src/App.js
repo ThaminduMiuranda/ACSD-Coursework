@@ -20,6 +20,7 @@ function App() {
           path="/search/properties/:id.html"
           element={<PropertyDetails />}
         />
+        <Route path="/home/properties/:id.html" element={<PropertyDetails />} />
       </Routes>
     </BrowserRouter>
   );
