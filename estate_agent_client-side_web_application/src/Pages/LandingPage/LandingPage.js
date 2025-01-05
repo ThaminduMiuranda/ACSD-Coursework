@@ -61,7 +61,7 @@ function LandingPage() {
         <section
           className="hero"
           style={{
-            backgroundImage: "url(/img/hero2.jpg)",
+            backgroundImage: "url(/img/hero5.jpg)",
           }}
         >
           <div className="hero-text">

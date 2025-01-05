@@ -116,7 +116,7 @@
 }
 
 .favorites-list.horizontal {
-  width: fit-content;
+  width: 100%;
   padding: 0;
   border: none;
 }
@@ -189,7 +189,7 @@
     flex-shrink: 0;
     gap: 5px;
     height: fit-content;
-    overflow-x: auto;
+    overflow-x: scroll;
     overflow-y: hidden;
   }
   .favorites-list.horizontal::-webkit-scrollbar {
