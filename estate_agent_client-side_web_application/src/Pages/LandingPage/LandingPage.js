@@ -100,7 +100,7 @@ function LandingPage() {
           </div>
         </section>
         <section className="section favorites">
-          <h2 className="section-title">Featured Properties</h2>
+          <h2 className="section-title">Favorites</h2>
           <FavoriteGrid
             favorites={favorites}
             onAdd={addFavorite}
