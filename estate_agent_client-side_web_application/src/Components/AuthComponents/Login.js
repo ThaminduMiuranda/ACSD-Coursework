@@ -3,7 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../data/simulatedDatabase";
 
 /**
- * Login component that handles user authentication.
+ * Login component handles the user login functionality.
+ *
+ * This component maintains state variables for the username, password, and message.
+ * It provides handlers for form submission and input changes.
+ * On successful login, it stores the username in local storage and navigates to the home page.
  *
  * @component
  * @example
@@ -11,73 +15,75 @@ import { loginUser } from "../../data/simulatedDatabase";
  *   <Login />
  * )
  *
- * @returns {JSX.Element} The rendered login form component.
+ * @returns {JSX.Element} The rendered login component.
  *
  * @function
  * @name Login
  *
  * @description
- * This component renders a login form with fields for username and password.
- * It handles form submission, user input changes, and displays messages based on login success or failure.
- *
- * @property {string} username - The username input value.
- * @property {function} setUsername - Function to update the username state.
- * @property {string} password - The password input value.
- * @property {function} setPassword - Function to update the password state.
- * @property {string} message - The message to display after login attempt.
- * @property {function} setMessage - Function to update the message state.
- * @property {function} navigate - Function to navigate to different routes.
+ * - Uses `useState` to manage state for username, password, and message.
+ * - Uses `useNavigate` from `react-router-dom` for navigation.
  *
  * @function handleLogin
- * @description Handles the form submission for login. Calls the loginUser function and updates the message state based on the result.
+ * Handles the login form submission.
  * @param {Event} event - The form submission event.
+ * @returns {void}
  *
  * @function handleUsernameChange
- * @description Updates the username state when the input value changes.
+ * Updates the username state on input change.
  * @param {Event} event - The input change event.
+ * @returns {void}
  *
  * @function handlePasswordChange
- * @description Updates the password state when the input value changes.
+ * Updates the password state on input change.
  * @param {Event} event - The input change event.
+ * @returns {void}
  */
 function Login() {
+  // State variables for username password and message
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook for navigation
 
+  // Handle login form submission
   function handleLogin(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent default form submission behavior
     try {
-      const result = loginUser(username, password);
+      const result = loginUser(username, password); // Attempt to log in with entered credentials
+      setMessage(result.message); // Display the result message
 
-      setMessage(result.message);
       if (result.success) {
         localStorage.setItem("loggedInUser", username); // Sotres the currently logged in user.
+
+        // Redirect to home page after a delay to simulate API response time
         setTimeout(() => {
           navigate("/home");
         }, 2000); // to imitate an api request
       } else {
       }
     } catch (error) {
+      // Handle errors and update message
       setMessage("An error occurred during login. Please try again.");
       console.error("Login error:", error);
     }
   }
 
+  // Update the username state on input change
   function handleUsernameChange(event) {
     setUsername(event.target.value);
   }
 
+  // Update the password state on input change
   function handlePasswordChange(event) {
     setPassword(event.target.value);
   }
 
   return (
-    <div>
+    <div className="auth-section">
       <h1>Login</h1>
       <form onSubmit={handleLogin}>
-        <div>
+        <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
             id="username"
@@ -86,7 +92,7 @@ function Login() {
             onChange={handleUsernameChange}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
             id="password"
@@ -95,15 +101,21 @@ function Login() {
             onChange={handlePasswordChange}
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="auth-button">
+          Login
+        </button>
       </form>
-      {message && <p>{message}</p>}
+      {message && (
+        <p
+          className={`message ${
+            message.includes("successful") ? "success" : "error"
+          }`}
+        >
+          {message}
+        </p>
+      )}
     </div>
   );
 }
 
-/**
- * Exporting the Login component as the default export.
- * This allows the component to be imported without specifying its name.
- */
 export default Login;

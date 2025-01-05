@@ -10,6 +10,37 @@ import { MdBed, MdLocationPin } from "react-icons/md";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Footer from "../../Components/FooterComponent/Footer";
 
+/**
+ * @component PropertyDetails
+ * @description Renders a detailed view of a property with images, information, floor plan, and location map.
+ * The component fetches property data based on URL parameters and manages the display of multiple property images,
+ * tabbed content sections, and an interactive Google Maps embed.
+ *
+ * @uses {useParams} - React Router hook to get property ID from URL
+ * @uses {useState} - React hook for managing component state
+ * @uses {useEffect} - React hook for handling side effects
+ * @uses {useRef} - React hook for maintaining references
+ *
+ * State Management:
+ * - property: Stores the fetched property data
+ * - activeImage: Tracks which property image is currently displayed
+ *
+ * Features:
+ * - Image gallery with thumbnails
+ * - Property details display (type, location, bedrooms, price)
+ * - Tabbed interface for:
+ *   - Property description
+ *   - Interactive floor plan with zoom capability
+ *   - Google Maps location view
+ * - Responsive map sizing
+ * - Buy/Rent button based on property type
+ *
+ * @returns {JSX.Element} A comprehensive property details page including images,
+ * details, description, floor plan, and location map
+ *
+ * @example
+ * <PropertyDetails />
+ */
 function PropertyDetails() {
   const { id } = useParams(); // matches 'properties/:id.html'
   const [property, setProperty] = useState(null);
@@ -188,19 +219,6 @@ function PropertyDetails() {
                   </div>
                 </TabPanel>
                 <TabPanel>
-                  {/* <iframe
-                    ref={mapRef}
-                    id="google-map"
-                    title="google-map"
-                    src={`https://www.google.com/maps?q=${encodeURIComponent(
-                      property.location
-                    )}&output=embed`}
-                    width="600"
-                    height="450"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                  /> */}
                   <iframe
                     ref={mapRef}
                     id="google-map"

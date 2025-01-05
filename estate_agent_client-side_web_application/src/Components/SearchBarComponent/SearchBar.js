@@ -5,30 +5,58 @@ import DatePicker from "react-widgets/DatePicker";
 import "react-widgets/styles.css";
 import "./SearchBar.css";
 
+/**
+ * A search form component that allows users to filter property listings.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {Function} props.onSearch - Callback function triggered when search parameters change or form is submitted
+ *
+ * @example
+ * // Usage
+ * <SearchBar onSearch={(searchParams) => handleSearch(searchParams)} />
+ *
+ * @property {Object} searchData - State object containing all search parameters
+ * @property {string} searchData.type - Property type filter (House/Flat/Apartment/Any)
+ * @property {string} searchData.minPrice - Minimum price filter
+ * @property {string} searchData.maxPrice - Maximum price filter
+ * @property {string} searchData.minBedrooms - Minimum number of bedrooms filter
+ * @property {string} searchData.maxBedrooms - Maximum number of bedrooms filter
+ * @property {string} searchData.startDate - Start date for availability filter (ISO string)
+ * @property {string} searchData.endDate - End date for availability filter (ISO string)
+ * @property {string} searchData.postcode - Postcode location filter
+ *
+ * @returns {JSX.Element} A form containing property search filters including type dropdown,
+ *                       price range, bedroom range, date range, and postcode input
+ */
 function SearchBar({ onSearch }) {
+  // State to store the search data entered by the user
   const [searchData, setSearchData] = useState({
-    type: "",
-    minPrice: "",
-    maxPrice: "",
-    minBedrooms: "",
-    maxBedrooms: "",
-    startDate: "",
-    endDate: "",
-    postcode: "",
+    type: "", // Property type
+    minPrice: "", // Minimum price
+    maxPrice: "", // Maximum price
+    minBedrooms: "", // Minimum bedrooms
+    maxBedrooms: "", // Maximum bedrooms
+    startDate: "", // Start date for availability
+    endDate: "", // End date for availability
+    postcode: "", // Postcode for filtering
   });
 
+  // Effect to trigger the onSearch callback whenever searchData changes
   useEffect(() => {
     onSearch(searchData);
   }, [onSearch, searchData]);
 
+  // Handle changes in input fields and update searchData
   function handleInputChange(e) {
     const { name, value } = e.target;
-    setSearchData({ ...searchData, [name]: value });
+    setSearchData({ ...searchData, [name]: value }); // Update the corresponding field in searchData
   }
 
+  // Handle form submission to trigger the search
   function handleSubmit(e) {
-    e.preventDefault();
-    onSearch(searchData);
+    e.preventDefault(); // Prevent default form submission
+    onSearch(searchData); // Trigger the onSearch callback with current searchData
   }
 
   return (
@@ -38,9 +66,9 @@ function SearchBar({ onSearch }) {
         <DropdownList
           className="type-list-input"
           name="type"
-          data={["House", "Flat", "Apartment", "Any"]}
+          data={["House", "Flat", "Apartment", "Any"]} // Options for property type
           defaultValue={"Any"}
-          onChange={(value) => setSearchData({ ...searchData, type: value })}
+          onChange={(value) => setSearchData({ ...searchData, type: value })} // Update type on selection
         />
       </label>
       <div className="filter">
@@ -96,7 +124,7 @@ function SearchBar({ onSearch }) {
             onChange={(value) =>
               setSearchData({
                 ...searchData,
-                startDate: value ? value.toISOString() : (value = null),
+                startDate: value ? value.toISOString() : (value = null), // Convert date to ISO string
               })
             }
           />
@@ -107,7 +135,10 @@ function SearchBar({ onSearch }) {
             className="end-date-input"
             name="endDate"
             onChange={(value) =>
-              setSearchData({ ...searchData, endDate: value.toISOString() })
+              setSearchData({
+                ...searchData,
+                endDate: value ? value.toISOString() : (value = null), // Convert date to ISO string
+              })
             }
           />
         </label>
@@ -120,7 +151,7 @@ function SearchBar({ onSearch }) {
             type="text"
             name="postcode"
             placeholder="Postcode"
-            onChange={handleInputChange}
+            onChange={handleInputChange} // Update postcode in searchData
           />
         </label>
 

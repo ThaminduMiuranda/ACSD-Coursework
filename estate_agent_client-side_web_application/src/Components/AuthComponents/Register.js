@@ -3,7 +3,10 @@ import { registerUser } from "../../data/simulatedDatabase";
 import { useNavigate } from "react-router-dom";
 
 /**
- * Register component that handles user registration.
+ * Register component handles user registration.
+ *
+ * This component maintains state variables for username, password, and message.
+ * It provides form submission handling, input change handling, and user feedback.
  *
  * @component
  * @example
@@ -11,78 +14,89 @@ import { useNavigate } from "react-router-dom";
  *   <Register />
  * )
  *
- * @returns {JSX.Element} The rendered register form component.
+ * @returns {JSX.Element} The rendered Register component.
  *
  * @function
  * @name Register
  *
  * @description
- * This component renders a registration form with fields for creating a username and password.
- * It handles form submission, user input changes, and displays messages based on registration success or failure.
+ * The Register component renders a registration form with fields for username and password.
+ * It handles form submission, attempts to register the user, and provides feedback messages.
+ * On successful registration, it stores the username in localStorage and redirects to the home page.
  *
- * @property {string} username - The username input value.
- * @property {function} setUsername - Function to update the username state.
- * @property {string} password - The password input value.
- * @property {function} setPassword - Function to update the password state.
- * @property {string} message - The message to display after registration attempt.
- * @property {function} setMessage - Function to update the message state.
- * @property {function} navigate - Function to navigate to different routes.
+ * @hook
+ * @name useState
+ * @description Manages state variables for username, password, and message.
  *
- * @function handleRegister
- * @description Handles the form submission for registration. Calls the registerUser function and updates the message state based on the result.
+ * @hook
+ * @name useNavigate
+ * @description Provides navigation functionality to redirect users.
+ *
+ * @function
+ * @name handleRegister
+ * @description Handles the registration form submission.
  * @param {Event} event - The form submission event.
  *
- * @function handleUsernameChange
- * @description Updates the username state when the input value changes.
+ * @function
+ * @name handleUsernameChange
+ * @description Updates the username state on input change.
  * @param {Event} event - The input change event.
  *
- * @function handlePasswordChange
- * @description Updates the password state when the input value changes.
+ * @function
+ * @name handlePasswordChange
+ * @description Updates the password state on input change.
  * @param {Event} event - The input change event.
  */
 function Register() {
+  // State variables for username, password, and message
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook for navigation
 
+  // Handle registration form submission
   function handleRegister(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent default form submission behavior
 
     try {
-      const result = registerUser(username, password);
+      const result = registerUser(username, password); // Attempt to register the user
 
-      setMessage(result.message);
+      setMessage(result.message); // Display the result message
 
       if (result.success) {
-        localStorage.setItem("loggedInUser", username); // Store new user
+        localStorage.setItem("loggedInUser", username); // Store registered user in localStorage
 
+        // Clear the form fields
         setUsername("");
         setPassword("");
 
+        // Redirect to home page after a delay to simulate server response time
         setTimeout(() => {
           navigate("/home");
         }, 2000); //The delay is used to simulate server response time and provide a better user experience.
       }
     } catch (error) {
+      // Handle errors and update message
       setMessage("An error occurred during registration. Please try again.");
       console.error("Registration error:", error);
     }
   }
 
+  // Update the username state on input change
   function handleUsernameChange(event) {
     setUsername(event.target.value);
   }
 
+  // Update the password state on input change
   function handlePasswordChange(event) {
     setPassword(event.target.value);
   }
 
   return (
-    <div>
+    <div className="auth-section">
       <h1>Register</h1>
       <form onSubmit={handleRegister}>
-        <div>
+        <div className="form-group">
           <label htmlFor="create-username">Create Username:</label>
           <input
             id="create-username"
@@ -91,7 +105,7 @@ function Register() {
             onChange={handleUsernameChange}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="create-password">Create Password:</label>
           <input
             id="create-password"
@@ -100,9 +114,19 @@ function Register() {
             onChange={handlePasswordChange}
           />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit" className="auth-button">
+          Register
+        </button>
       </form>
-      {message && <p>{message}</p>}
+      {message && (
+        <p
+          className={`message ${
+            message.includes("successful") ? "success" : "error"
+          }`}
+        >
+          {message}
+        </p>
+      )}
     </div>
   );
 }

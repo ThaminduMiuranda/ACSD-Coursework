@@ -6,6 +6,19 @@ import SearchProperty from "./Pages/SearchProperty/SearchProperty";
 import AuthPage from "./Pages/Authentication/AuthPage";
 import PropertyDetails from "./Pages/PropertyDetails/PropertyDetails";
 
+/**
+ * Main routing component for the estate agent web application.
+ * Sets up browser routing and defines paths to different pages in the application.
+ * Routes include:
+ * - /auth: Authentication page
+ * - /: Landing page (redirects to home)
+ * - /home: Landing page
+ * - /search: Property search page
+ * - /find-agent: Agent finder page
+ * - /search/properties/:id.html: Property details page accessed from search
+ * - /home/properties/:id.html: Property details page accessed from home
+ * @returns {JSX.Element} A BrowserRouter component containing all application routes
+ */
 function App() {
   return (
     <BrowserRouter>

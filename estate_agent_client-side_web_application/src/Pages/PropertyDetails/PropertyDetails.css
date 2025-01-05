@@ -310,11 +310,6 @@
   height: fit-content; */
 }
 
-.property-page footer .footer {
-  /* position: absolute; */
-  /* top: 0; */
-}
-
 @media (min-width: 640px) {
   .image-gallery {
     flex-direction: row;

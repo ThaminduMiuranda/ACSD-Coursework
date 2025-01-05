@@ -14,23 +14,53 @@ import {
 import { useEffect, useState } from "react";
 import ThemeToggle from "../ThemeToggleComponet/ThemeToggle";
 
+/**
+ * Navbar component that renders the navigation bar for the estate agent web application.
+ * It includes links to different pages, a theme toggle, and user authentication controls.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Navbar />
+ * )
+ *
+ * @returns {JSX.Element} The rendered Navbar component.
+ *
+ * @description
+ * The Navbar component has the following features:
+ * - Displays links to "Home", "Search Property", and "Find Agent" pages.
+ * - Shows the logged-in user's name and a logout button if the user is logged in.
+ * - Provides a login link if the user is not logged in.
+ * - Includes a theme toggle button.
+ * - Adapts to mobile view with a collapsible menu.
+ *
+ * @function
+ * @name Navbar
+ */
 function Navbar() {
+  // State to control whether the mobile menu is expanded
   const [menuExpanded, setMenuExpanded] = useState(false);
+
+  // State to store the logged-in user initialized from localStorage
   const [loggedInUser, setLoggedInUser] = useState(() =>
     localStorage.getItem("loggedInUser")
   );
 
+  // State to control whether the user menu is open
   const [userMenuOpen, setUserMenuOpen] = useState(false);
 
+  // Handle logout by clearing logged-in user data from localStorage
   function handleLogout(params) {
     localStorage.removeItem("loggedInUser");
     setLoggedInUser(null);
   }
 
+  // Synchronize the logged-in user state with localStorage changes
   useEffect(() => {
     function handleStorageChange(params) {
       setLoggedInUser(localStorage.getItem("loggedInUser"));
     }
+    // Listen for storage changes
     window.addEventListener("storage", handleStorageChange);
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);

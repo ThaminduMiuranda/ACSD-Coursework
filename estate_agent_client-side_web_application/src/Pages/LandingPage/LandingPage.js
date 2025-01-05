@@ -5,7 +5,6 @@ import "./LandingPage.css";
 import FavoriteGrid from "../../Components/FavoriteListComponents/FavoriteGrid/FavoriteGrid";
 import Footer from "../../Components/FooterComponent/Footer";
 import PropertyCard from "../../Components/PropertyListComponents/PropertyCard/PropertyCard";
-import { MdArrowForward } from "react-icons/md";
 
 function LandingPage() {
   function loadFavorites() {
@@ -62,7 +61,7 @@ function LandingPage() {
         <section
           className="hero"
           style={{
-            backgroundImage: "url(/img/heroimage.jpg)",
+            backgroundImage: "url(/img/hero2.jpg)",
           }}
         >
           <div className="hero-text">
@@ -72,26 +71,27 @@ function LandingPage() {
             <span className="text-2">
               Explore hundreds of properties <span>at your fingertips.</span>
             </span>
-          </div>
-          <div className="hero-button">
-            <Link className="search-button" to={"/search"}>
-              <span className="search-text">Search properties</span>
-            </Link>
+            <div className="hero-button">
+              <Link className="search-button" to={"/search"}>
+                <span className="search-text">Search properties</span>
+              </Link>
+            </div>
           </div>
         </section>
-        <section className="about">
-          <h2>About Us</h2>
+        <section className="section about">
+          <h2 className="section-title">About Us</h2>
           <p>
             We are a leading real estate agency committed to providing the best
             services to our clients. Our mission is to help you find your dream
             home with ease and confidence.
           </p>
         </section>
-        <section className="featured-properties">
-          <h2>Featured Properties</h2>
+        <section className="section featured-properties">
+          <h2 className="section-title">Featured Properties</h2>
           <div className="property-cards">
             {properties.slice(0, 3).map((property) => (
               <PropertyCard
+                key={property.id}
                 property={property}
                 onAdd={addFavorite}
                 onRemove={removeFavorite}
@@ -99,7 +99,8 @@ function LandingPage() {
             ))}
           </div>
         </section>
-        <section className="favorites">
+        <section className="section favorites">
+          <h2 className="section-title">Featured Properties</h2>
           <FavoriteGrid
             favorites={favorites}
             onAdd={addFavorite}
