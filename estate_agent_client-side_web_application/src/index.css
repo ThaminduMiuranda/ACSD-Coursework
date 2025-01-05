@@ -30,6 +30,7 @@
   /* --text-primary: 255, 255, 255; */
   --text-primary: 0, 0, 0;
   --text-shadow-color: 255, 255, 255;
+  --button-text: 255, 255, 255;
   /* --text-primary: 255, 255, 255; */
 
   --border: 1px solid rgba(var(--gray-950), 0.3);
