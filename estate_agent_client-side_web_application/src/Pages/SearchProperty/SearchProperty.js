@@ -4,6 +4,7 @@ import PropertyGrid from "../../Components/PropertyListComponents/PropertyGrid/P
 import SearchBar from "../../Components/SearchBarComponent/SearchBar";
 import "./SearchProperties.css";
 import FavoriteGrid from "../../Components/FavoriteListComponents/FavoriteGrid/FavoriteGrid";
+import Footer from "../../Components/FooterComponent/Footer";
 
 function SearchProperty() {
   function loadFavorites() {
@@ -147,7 +148,9 @@ function SearchProperty() {
           />
         </div>
       </main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

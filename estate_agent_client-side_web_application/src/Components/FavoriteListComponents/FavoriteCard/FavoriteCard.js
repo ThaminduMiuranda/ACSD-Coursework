@@ -30,10 +30,10 @@ function FavoriteCard({ property, onRemove }) {
           className="favorite-image"
           style={{
             backgroundImage: `url(${property.picture})`,
-            height: "150px",
+            height: "140px",
             // width: "200px",
             aspectRatio: "307/238",
-            backgroundSize: "auto 150px",
+            backgroundSize: "auto 140px",
             // backgroundSize: "200px auto",
             backgroundRepeat: "no-repeat",
           }}

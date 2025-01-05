@@ -9,6 +9,7 @@ function FavoriteGrid({
   onAdd,
   allProperties,
   onClearAll,
+  horizontal,
 }) {
   function handleDrop(event) {
     event.preventDefault();
@@ -53,12 +54,14 @@ function FavoriteGrid({
       <div
         className={`favorites-grid ${
           favoriteMenuExpanded ? "expanded" : "collapsed"
-        }`}
+        } ${horizontal ? "horizontal" : ""}`}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
       >
-        <h3 className="favorites-heading">Favorites</h3>
-        <div className="favorites-list">
+        <h3 className={`favorites-heading ${horizontal ? "horizontal" : ""}`}>
+          Favorites
+        </h3>
+        <div className={`favorites-list ${horizontal ? "horizontal" : ""}`}>
           {favorites.length === 0 ? (
             <span className="no-favorites">No favorites added</span>
           ) : (
@@ -81,11 +84,15 @@ function FavoriteGrid({
       </div>
 
       <MdMenu
-        className={`favorites-open ${favoriteMenuExpanded ? "open" : ""}`}
+        className={`favorites-open ${favoriteMenuExpanded ? "open" : ""} ${
+          horizontal ? "horizontal" : ""
+        }`}
         onClick={() => setfavoriteMenuExpanded(true)}
       />
       <MdClose
-        className={`favorites-close ${favoriteMenuExpanded ? "close" : ""}`}
+        className={`favorites-close ${favoriteMenuExpanded ? "close" : ""} ${
+          horizontal ? "horizontal" : ""
+        }`}
         onClick={() => setfavoriteMenuExpanded(false)}
       />
     </>
