@@ -32,7 +32,7 @@
   margin: 5px 0;
 }
 
-.footer-section ul li a {
+.footer-section ul li .link {
   color: white;
   text-decoration: none;
 }
