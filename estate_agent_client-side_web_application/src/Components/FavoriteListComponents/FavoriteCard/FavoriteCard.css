@@ -28,6 +28,7 @@
 }
 
 .favorite-card .icon {
+  flex-shrink: 0;
   display: flex;
   justify-content: start;
   font-size: 24px;

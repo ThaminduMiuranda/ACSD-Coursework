@@ -90,6 +90,7 @@ function Login() {
             type="text"
             value={username}
             onChange={handleUsernameChange}
+            autoComplete="username"
           />
         </div>
         <div className="form-group">
@@ -99,6 +100,7 @@ function Login() {
             type="password"
             value={password}
             onChange={handlePasswordChange}
+            autoComplete="password"
           />
         </div>
         <button type="submit" className="auth-button">

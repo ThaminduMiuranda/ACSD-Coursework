@@ -103,6 +103,7 @@ function Register() {
             type="text"
             value={username}
             onChange={handleUsernameChange}
+            autoComplete="username"
           />
         </div>
         <div className="form-group">
@@ -112,6 +113,7 @@ function Register() {
             type="password"
             value={password}
             onChange={handlePasswordChange}
+            autoComplete="new-password"
           />
         </div>
         <button type="submit" className="auth-button">
