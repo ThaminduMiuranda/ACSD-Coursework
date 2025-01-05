@@ -1,0 +1,36 @@
+.agents-grid {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  background: rgb(var(--gray-0));
+  border-radius: 12px;
+  border: var(--border);
+  width: 100%;
+}
+
+.no-results h3 {
+  margin-bottom: 0.5rem;
+  color: rgb(var(--gray-950));
+}
+
+.no-results p {
+  color: rgb(var(--gray-600));
+}
+
+@media (min-width: 640px) {
+  .agents-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .agents-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

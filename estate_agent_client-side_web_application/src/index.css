@@ -27,7 +27,7 @@
   --gray-900: 23, 23, 23;
   --gray-950: 10, 10, 10;
 
-  --text-primary: 0, 0, 0;
+  --text-primary: 255, 255, 255;
   --text-shadow-color: 255, 255, 255;
   /* --text-primary: 255, 255, 255; */
 
@@ -76,7 +76,7 @@
   --gray-900: 245, 245, 245;
   --gray-950: 250, 250, 250;
 
-  --text-primary: 0, 0, 0;
+  --text-primary: 255, 255, 255;
   --text-shadow-color: 255, 255, 255;
 
   /* --text-primary: 255, 255, 255; */
