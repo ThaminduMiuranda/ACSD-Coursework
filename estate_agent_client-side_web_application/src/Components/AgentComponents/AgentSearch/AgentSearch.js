@@ -32,7 +32,7 @@ function AgentSearch({ onSearch }) {
     "Commercial",
     "Luxury",
     "Investment",
-    "New Development",
+    "New-Development",
   ];
 
   // Handle form submission
