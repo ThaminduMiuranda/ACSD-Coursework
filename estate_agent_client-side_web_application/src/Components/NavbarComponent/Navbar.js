@@ -110,7 +110,7 @@ function Navbar() {
         </div>
 
         <div className="mobile-nav">
-          <div className="logo">
+          <div className="start">
             <Link className="link" to={"/home"}>
               <MdRealEstateAgent />
               <span>Dwello</span>
